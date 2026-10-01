@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { Mark } from "@/components/Logo";
+import PartnerWall from "@/components/PartnerWall";
+import { getPartners } from "@/lib/partners";
 import { accentBg, business, faqs, process, reviews, serviceGroups, stats } from "@/lib/data";
 
 export default function Home() {
+  const partners = getPartners();
   return (
     <>
       {/* HERO */}
@@ -47,6 +50,8 @@ export default function Home() {
           ))}
         </dl>
       </section>
+
+      <PartnerWall partners={partners} />
 
       {/* SERVICES */}
       <section className="mx-auto mt-28 max-w-6xl px-5">

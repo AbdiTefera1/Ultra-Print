@@ -27,16 +27,42 @@ export const serviceGroups: { id: string; need: string; title: string; accent: A
     items: ["Colour printing", "Custom printing", "Graphic design"] },
 ];
 
-export const quoteLink = (picked: string[]) =>
+export const quoteLink = (picked: string[], notes = "") =>
   `${business.whatsapp}?text=${encodeURIComponent(
-    picked.length ? `Hello Ultra Print, I'd like a quote for: ${picked.join(", ")}.` : "Hello Ultra Print, I'd like a quote."
+    (picked.length ? `Hello Ultra Print, I'd like a quote for: ${picked.join(", ")}.` : "Hello Ultra Print, I'd like a quote.") +
+      (notes.trim() ? `
+
+Details: ${notes.trim()}` : "")
   )}`;
 
+export const groupBlurb: Record<string, string> = {
+  identity: "Everything a business needs to look put together and professional.",
+  marketing: "Put your offer in people's hands.",
+  documents: "From a single copy to a finished, bound book.",
+  custom: "Bring a finished file, or just an idea. We can design it too.",
+};
+
+export const serviceInfo: Record<string, string> = {
+  "Business card printing": "Cards for you and your team, printed in sharp colour.",
+  "Letterhead & business cards": "Matching stationery so every document looks like it comes from one company.",
+  "Business document printing": "Contracts, proposals, reports and forms, printed cleanly.",
+  "Brochure printing": "Folded brochures that explain what you offer.",
+  "Flyers & brochures": "Flyers and brochures for events, openings and offers.",
+  "Posters": "Eye-catching posters for events, shops and announcements.",
+  "Calendars": "Branded calendars for your office or your customers.",
+  "Copy services": "Fast copies of your documents.",
+  "Binding services": "Neat binding for reports, theses and presentations.",
+  "Books": "Printed and finished books for authors, schools and organisations.",
+  "Colour printing": "Vivid full-colour prints with sharp detail.",
+  "Custom printing": "Something unusual? Tell us what you have in mind.",
+  "Graphic design": "We can create or refine your artwork before it goes to print.",
+};
+
 export const stats = [
-  ["5.0", "Google rating, 24 reviews"],
+  ["5.0", "Google rating, 24+ reviews"],
   ["7 days", "open every week"],
   ["8 AM – 9 PM", "Monday to Saturday"],
-  ["14", "print and design services"],
+  ["200+", "print and design services"],
 ];
 
 export const process = [
@@ -44,19 +70,6 @@ export const process = [
   ["Confirm the details", "We agree size, paper, quantity and price before printing."],
   ["We print and finish", "Colour printing, cutting and binding as the job needs."],
   ["Collect your order", "Pick it up at our shop on Gabon St."],
-];
-
-// Replace `src` with a real photo (files go in /public/work) to swap out the colour tiles.
-export const work: { title: string; category: string; accent: Accent; src?: string }[] = [
-  { title: "Business cards", category: "Business identity", accent: "cool" },
-  { title: "Letterhead set", category: "Business identity", accent: "cool" },
-  { title: "Tri-fold brochure", category: "Marketing", accent: "warm" },
-  { title: "Event poster", category: "Marketing", accent: "warm" },
-  { title: "Wall calendar", category: "Marketing", accent: "warm" },
-  { title: "Bound book", category: "Documents & books", accent: "blue" },
-  { title: "Report binding", category: "Documents & books", accent: "blue" },
-  { title: "Custom print", category: "Colour & custom", accent: "purple" },
-  { title: "Brand artwork", category: "Colour & custom", accent: "purple" },
 ];
 
 export const reviews = [
@@ -72,3 +85,7 @@ export const faqs = [
   ["When are you open?", "Monday to Saturday 8:00 AM to 9:00 PM, and Sunday 10:00 AM to 9:00 PM."],
   ["Where are you?", "Gabon St, Addis Ababa. The Contact page has a map."],
 ];
+
+// Companies without a logo file can be listed here by name (shown as a text wordmark).
+// Logo files go in public/partners/current (working with) and public/partners/past (worked with).
+export const partnerNames: { name: string; status: "current" | "past" }[] = [];

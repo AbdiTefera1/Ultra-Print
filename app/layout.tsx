@@ -44,6 +44,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <a href={business.tel} className="underline underline-offset-4">{business.phone}</a>
             </div>
           </div>
+          <div className="border-t border-ink/10">
+            <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-5 text-xs text-ink/60 sm:flex-row sm:items-center sm:justify-between">
+              <p>© {new Date().getFullYear()} Ultra Print. All rights reserved.</p>
+              <p>
+                Developed by{" "}
+                <a href="https://supait.et" target="_blank" rel="noopener noreferrer" className="font-semibold text-ink underline underline-offset-4 hover:text-accent">SupaIT Service</a>
+              </p>
+            </div>
+          </div>
         </footer>
         <div className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-2 border-t border-ink/15 bg-paper/95 backdrop-blur md:hidden">
           <a href={business.tel} className="py-4 text-center font-semibold">Call</a>
