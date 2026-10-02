@@ -30,7 +30,7 @@ export default function ServiceCatalog() {
         <nav aria-label="Service categories" className="flex gap-2 overflow-x-auto pb-1">
           {serviceGroups.map((g) => (
             <a key={g.id} href={`#${g.id}`} aria-current={active === g.id ? "true" : undefined}
-              className="shrink-0 rounded-full border border-ink/20 bg-white px-4 py-2 text-sm font-medium transition-colors hover:border-ink aria-[current=true]:border-purple aria-[current=true]:bg-purple aria-[current=true]:text-white">
+              className="shrink-0 rounded-full border border-ink/20 bg-white px-4 py-2.5 text-sm font-medium transition-colors hover:border-ink aria-[current=true]:border-purple aria-[current=true]:bg-purple aria-[current=true]:text-white">
               {g.title}
             </a>
           ))}
@@ -96,7 +96,7 @@ export default function ServiceCatalog() {
               <ul className="mt-4 flex flex-wrap gap-2">
                 {picked.map((p) => (
                   <li key={p}>
-                    <button onClick={() => toggle(p)} aria-label={`Remove ${p}`} className="flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-sm ring-1 ring-ink/15 hover:ring-ink">
+                    <button onClick={() => toggle(p)} aria-label={`Remove ${p}`} className="flex items-center gap-2 rounded-full bg-white px-3.5 py-2.5 text-sm ring-1 ring-ink/15 hover:ring-ink">
                       {p} <span aria-hidden className="text-ink/50">×</span>
                     </button>
                   </li>
@@ -107,7 +107,7 @@ export default function ServiceCatalog() {
             <textarea id="notes" value={notes} onChange={(e) => setNotes(e.target.value)} rows={3} placeholder="Size, quantity, deadline…"
               className="mt-2 w-full resize-none rounded-2xl border border-ink/15 bg-white p-3 text-sm outline-none focus:border-purple" />
             <a href={quoteLink(picked, notes)} className="g-action mt-4 block rounded-full py-3.5 text-center font-semibold shadow-lg shadow-purple/20">Send on WhatsApp</a>
-            <a href={business.tel} className="mt-3 block text-center text-sm font-medium underline underline-offset-4">or call {business.phone}</a>
+            <a href={business.tel} className="mt-1 block py-2.5 text-center text-sm font-medium underline underline-offset-4">or call {business.phone}</a>
           </div>
         </aside>
       </div>

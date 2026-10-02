@@ -30,7 +30,7 @@ export default function WorkGallery({ items, categories }: { items: WorkItem[]; 
         <div role="group" aria-label="Filter by category" className="flex gap-2 overflow-x-auto pb-1">
           {pills.map((c) => (
             <button key={c.id} aria-pressed={cat === c.id} onClick={() => setCat(c.id)}
-              className="shrink-0 rounded-full border border-ink/20 bg-white px-4 py-2 text-sm font-medium transition-colors hover:border-ink aria-pressed:border-purple aria-pressed:bg-purple aria-pressed:text-white">
+              className="shrink-0 rounded-full border border-ink/20 bg-white px-4 py-2.5 text-sm font-medium transition-colors hover:border-ink aria-pressed:border-purple aria-pressed:bg-purple aria-pressed:text-white">
               {c.label} <span className="opacity-60">{c.count}</span>
             </button>
           ))}
@@ -77,7 +77,7 @@ export default function WorkGallery({ items, categories }: { items: WorkItem[]; 
             <div className="grid place-items-center bg-surface p-4">
               <Image src={cur.src} alt={`${cur.title}, ${cur.label}`} width={cur.w} height={cur.h} sizes="90vw" className="h-auto max-h-[68vh] w-auto max-w-full rounded-xl object-contain" />
             </div>
-            <div className="flex items-center justify-between gap-4 p-5">
+            <div className="flex flex-wrap items-center justify-between gap-4 p-5">
               <div>
                 <p className="font-bold">{cur.title}</p>
                 <p className="text-sm text-ink/60">{cur.label} · {(open ?? 0) + 1} of {viewable.length}</p>
@@ -85,7 +85,7 @@ export default function WorkGallery({ items, categories }: { items: WorkItem[]; 
               <div className="flex gap-2">
                 <button onClick={() => step(-1)} aria-label="Previous" className="h-11 w-11 rounded-full border border-ink/20 hover:border-ink">←</button>
                 <button onClick={() => step(1)} aria-label="Next" className="h-11 w-11 rounded-full border border-ink/20 hover:border-ink">→</button>
-                <button onClick={() => dialog.current?.close()} className="g-action rounded-full px-5 font-semibold">Close</button>
+                <button onClick={() => dialog.current?.close()} className="g-action h-11 rounded-full px-5 font-semibold">Close</button>
               </div>
             </div>
           </>

@@ -17,7 +17,7 @@ export default function Contact() {
             <a href={business.tel} className="g-action rounded-full px-6 py-3 font-semibold">Call {business.phone}</a>
             <a href={business.whatsapp} className="rounded-full border-2 border-ink/80 px-6 py-3 font-semibold">WhatsApp</a>
           </div>
-          <a href={business.mapLink} className="inline-block font-semibold underline underline-offset-4">Open in Google Maps</a>
+          <a href={business.mapLink} className="inline-block py-2 font-semibold underline underline-offset-4">Open in Google Maps</a>
         </div>
         <iframe
           title="Ultra Print on Google Maps"

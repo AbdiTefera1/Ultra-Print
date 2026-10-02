@@ -41,7 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="space-y-1 text-ink/75">
               <p className="mb-2 font-semibold text-ink">Visit or call</p>
               <p>{business.address}</p>
-              <a href={business.tel} className="underline underline-offset-4">{business.phone}</a>
+              <a href={business.tel} className="inline-block py-2.5 underline underline-offset-4">{business.phone}</a>
             </div>
           </div>
           <div className="border-t border-ink/10">

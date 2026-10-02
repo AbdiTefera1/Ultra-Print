@@ -46,7 +46,7 @@ export default function Home() {
       <section aria-label="At a glance" className="mx-auto max-w-6xl px-5">
         <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-3xl bg-ink/10 md:grid-cols-4">
           {stats.map(([v, l]) => (
-            <div key={l} className="bg-surface p-6"><dt className="text-3xl font-extrabold">{v}</dt><dd className="mt-1 text-sm text-ink/70">{l}</dd></div>
+            <div key={l} className="bg-surface p-5 sm:p-6"><dt className="text-xl font-extrabold sm:whitespace-nowrap sm:text-2xl lg:text-3xl">{v}</dt><dd className="mt-1 text-sm text-ink/70">{l}</dd></div>
           ))}
         </dl>
       </section>
@@ -88,7 +88,7 @@ export default function Home() {
 
       {/* REVIEWS */}
       <section className="mx-auto mt-28 max-w-6xl px-5">
-        <div className="flex items-end justify-between gap-4">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between sm:gap-4">
           <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl">Rated 5.0 by customers.</h2>
           <p role="img" aria-label="5 out of 5 stars" className="text-2xl tracking-widest text-magenta">★★★★★</p>
         </div>
@@ -103,7 +103,7 @@ export default function Home() {
         <div className="mt-8 divide-y divide-ink/15 border-y border-ink/15">
           {faqs.map(([q, a]) => (
             <details key={q} className="py-5">
-              <summary className="flex items-center justify-between gap-4 text-lg font-semibold">{q}<span aria-hidden className="plus text-2xl text-accent transition-transform">+</span></summary>
+              <summary className="flex min-h-11 items-center justify-between gap-4 text-lg font-semibold">{q}<span aria-hidden className="plus text-2xl text-accent transition-transform">+</span></summary>
               <p className="mt-3 text-ink/75">{a}</p>
             </details>
           ))}
