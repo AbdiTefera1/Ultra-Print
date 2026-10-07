@@ -1,7 +1,7 @@
 export const business = {
   name: "Ultra Print",
   tagline: "your vision our print",
-  phone: "+251 92 039 7525",
+  phone: "+251 92 039 7525 | +251 913 737 239",
   tel: "tel:+251920397525",
   whatsapp: "https://wa.me/251920397525",
   address: "Gabon St, Addis Ababa, Ethiopia",

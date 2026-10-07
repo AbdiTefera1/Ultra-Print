@@ -30,6 +30,22 @@ body { background: var(--paper); color: var(--ink); font-family: var(--font-sans
 .acc-blue { background: #3f7abe; }
 .acc-purple { background: #8f298d; }
 
+/* Hero: light tints of the four logo colours (cyan, blue, purple, magenta) */
+.hero-bg {
+  background:
+    radial-gradient(60% 70% at 88% 18%, rgba(44,197,236,.38), transparent 70%),
+    radial-gradient(55% 65% at 92% 96%, rgba(225,22,108,.24), transparent 70%),
+    radial-gradient(50% 60% at 0% 100%, rgba(143,41,141,.14), transparent 70%),
+    linear-gradient(135deg, #e0f5fc 0%, #e3e9f8 45%, #f2e3f1 75%, #fbe2ec 100%);
+}
+/* Printing nod: a faint halftone dot screen that fades out toward the text */
+.halftone {
+  background-image: radial-gradient(circle, rgba(143,41,141,.38) 1.6px, transparent 1.9px);
+  background-size: 14px 14px;
+  -webkit-mask-image: linear-gradient(to left, #000, transparent 70%);
+  mask-image: linear-gradient(to left, #000, transparent 70%);
+}
+
 .rise { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; animation-delay: var(--d, 0s); }
 .float { animation: float 7s ease-in-out infinite; }
 @keyframes rise { from { opacity: 0; translate: 0 24px; } }

@@ -9,8 +9,9 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 pt-14 pb-20 lg:grid-cols-[1.15fr_.85fr]">
+      <section className="hero-bg relative overflow-hidden rounded-b-[2.5rem] sm:rounded-b-[3.5rem]">
+        <div aria-hidden className="halftone pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 opacity-60 sm:block" />
+        <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-5 pt-14 pb-32 lg:grid-cols-[1.15fr_.85fr]">
           <div>
             <p className="rise text-sm font-semibold uppercase tracking-[.25em] text-accent">Printing shop · Gabon St, Addis Ababa</p>
             <h1 className="rise mt-5 text-6xl font-extrabold leading-[.95] tracking-tight sm:text-8xl" style={{ "--d": ".1s" } as React.CSSProperties}>
@@ -26,8 +27,7 @@ export default function Home() {
           </div>
 
           <div className="relative mx-auto h-[420px] w-full max-w-md" aria-hidden>
-            <div className="absolute -left-6 top-0 h-60 w-60 rounded-full bg-cyan/50 blur-3xl" />
-            <div className="absolute bottom-0 right-0 h-64 w-64 rounded-full bg-magenta/40 blur-3xl" />
+            <div className="absolute inset-6 rounded-full bg-white/50 blur-3xl" />
             <div className="float absolute left-0 top-10 w-64 -rotate-6 rounded-3xl border border-ink/10 bg-white p-6 shadow-xl shadow-ink/10">
               <Mark id="hero" className="h-16 w-auto text-ink" />
               <p className="mt-8 text-xs uppercase tracking-[.3em] text-ink/60">your vision our print</p>
@@ -43,8 +43,8 @@ export default function Home() {
       </section>
 
       {/* PROOF */}
-      <section aria-label="At a glance" className="mx-auto max-w-6xl px-5">
-        <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-3xl bg-ink/10 md:grid-cols-4">
+      <section aria-label="At a glance" className="relative z-10 mx-auto -mt-14 max-w-6xl px-5">
+        <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-3xl bg-ink/10 shadow-xl shadow-ink/10 md:grid-cols-4">
           {stats.map(([v, l]) => (
             <div key={l} className="bg-surface p-5 sm:p-6"><dt className="text-xl font-extrabold sm:whitespace-nowrap sm:text-2xl lg:text-3xl">{v}</dt><dd className="mt-1 text-sm text-ink/70">{l}</dd></div>
           ))}
